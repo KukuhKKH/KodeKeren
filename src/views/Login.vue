@@ -23,7 +23,7 @@
                            </div>
                            <div class="log-bottom-cotent">
                               <p>
-                                 Buat Akun Baru <a href="signup.html">Daftar</a>
+                                 Buat Akun Baru <router-link to="/register">Daftar</router-link>
                               </p>
                            </div>
                         </div>
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapGetters, mapState } from 'vuex';
+import { mapActions, mapMutations, mapGetters, mapState } from 'vuex'
 export default {
   name: 'Login',
    data() {
@@ -309,7 +309,6 @@ export default {
   border-radius: 0px;
   border-bottom: 1px solid #fff;
   background-color: transparent;
-  color: #fff;
 }
 .custom:hover,
 .custom:focus {

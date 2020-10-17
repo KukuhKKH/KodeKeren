@@ -1,42 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav" v-if="isAuth">
-      <router-link to="/">Home</router-link> |
+    <div v-if="isAuth">
+      <app-header/>
+      <app-hero/>
+      <router-view />
+      <app-footer/>
     </div>
-    <router-view/>
+    <div v-if="!isAuth">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-   import {mapState, mapGetters} from 'vuex'
+import { mapState, mapGetters } from "vuex";
+ import Header from './components/Header'
+ import Footer from './components/Footer'
+ import Hero from './components/Hero'
 
-   export default {
-      computed: {
-         ...mapState(['login']),
-         ...mapGetters(['isAuth'])
-      }
-   }
+export default {
+  computed: {
+    ...mapState(["login"]),
+    ...mapGetters(["isAuth"]),
+  },
+  components: {
+     'app-header': Header,
+     'app-footer': Footer,
+     'app-hero': Hero
+  }
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
