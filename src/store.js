@@ -3,6 +3,7 @@ import Vuex from "vuex";
 
 import index from "./store/index";
 import auth from "./store/auth";
+import list from "./store/list";
 
 Vue.use(Vuex);
 
@@ -36,6 +37,6 @@ export default new Vuex.Store({
     },
   },
   modules: {
-    auth,index
+    auth,index,list
   },
 });

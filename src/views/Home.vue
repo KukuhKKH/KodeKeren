@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
+import { mapState, mapActions, mapMutations } from "vuex"
 export default {
   name: "Home",
   computed: {
